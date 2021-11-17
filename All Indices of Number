@@ -1,0 +1,20 @@
+int allIndexes(int input[], int size, int x, int output[]) {
+  static int i=0,j=0;
+    int ans = 0;
+    int n=size;
+    if(n==1)
+    {
+    if(input[0]==x)
+    {output[j++]=i++;
+    ans ++; } 
+    }
+    else
+    {
+        ans = allIndexes(input,size-1,x,output);
+        if(input[size-1]==x)
+        {
+            output[ans++] = size-1; 
+        }
+    }
+    return ans;
+}
