@@ -1,0 +1,26 @@
+int countZeros(int n) {
+   int result = 0;
+    int rem = n%10;
+    if(n<10)
+    {
+        if(n==0)
+        {
+            result += 1 ;
+        }
+        else 
+        {
+            return 0;
+        }
+    }
+    else if(rem==0)
+    {
+        result += 1;
+        result += countZeros(n/10);
+    }
+    else
+    {
+        result += countZeros(n/10);
+    }
+    return result;
+
+}
