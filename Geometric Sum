@@ -1,0 +1,16 @@
+
+#include<math.h>
+double geometricSum(int k) {
+    double result = 1;
+    if(k==0)
+    {
+        result = 1; 
+    }
+    else
+    {
+        result = 1/(pow(2,k)) ;
+        result += geometricSum(k-1);
+    }
+    return result;
+
+}
