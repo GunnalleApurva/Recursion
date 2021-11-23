@@ -1,0 +1,24 @@
+/* The base case is when size is 1 or 0, in that case it is a palindrome, so return true
+   In all other cases we check if first and last characters are same, if yes we call recursion for remaining part of string
+   If not then it is not recursive , we return false */
+
+
+#include<string.h>
+
+bool helper(char input[] , int size)
+{
+   
+    if (size < 2)
+        return true;
+    
+    if (input[0]==input[size-1])
+        return helper(input+1,size-2);
+    
+    return false;
+}
+
+bool checkPalindrome(char input[]) {
+    
+    return helper(input,strlen(input));
+}
+
