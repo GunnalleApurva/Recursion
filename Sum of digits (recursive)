@@ -1,0 +1,15 @@
+int sumOfDigits(int n) {
+    int sum = 0;
+    int rem = n%10;
+    if(n<10)
+    {
+        return n;
+    }
+    else
+    {
+        sum += rem; // samll calc
+        sum += sumOfDigits(n/10); // recursion
+    }
+    return sum;
+
+}
