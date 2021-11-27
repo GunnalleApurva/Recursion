@@ -1,0 +1,18 @@
+#include<cmath>
+#include<cstring>
+int stringToNumber(char input[]) {
+    // Write your code here
+int a=strlen(input);
+    if(a==1)
+    {  int k=input[0]-'0';
+        return k;
+    }
+    
+    int x=stringToNumber(input+1);
+    
+    int b=input[0]-'0';
+    int c=pow(10,a-1);
+    int s=b*c;
+    
+    return s+x;
+}
